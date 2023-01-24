@@ -1,32 +1,67 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import CompletedTodo from './components/CompletedTodo'
+import Form from './components/Form'
+import Todo from './components/Todo'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [idCounter, setIdCounter] = useState(2)
+  const [tasks, setTasks] = useState(
+    [
+      {
+        name: 'Eat Pizza',
+        completed: false,
+        id: 1
+      },
+      {
+        name: 'Dress up cat',
+        completed: true,
+        id: 2
+      }
+    ]
+  )
+
+  const addTasks = (inputValue) => {
+    setTasks(current => [...current, {
+      name: inputValue,
+      completed: false,
+      id: idCounter +1
+    }])
+
+    setIdCounter(idCounter +1)
+  }
+
+  const removeTask = (targetValue) => {
+    setTasks(current => current.filter(value => value.id !== targetValue.id))
+  }
+
+  const toggleComplete = (task) => {
+    // Flip the current boolean
+    task.completed = !task.completed
+
+    // Make a copy of the array not in state
+    let tasksArray = [...tasks]
+
+    // Filter out the item that matches
+    tasksArray = tasksArray.filter(obj => obj.id !== task.id)
+
+    // Add the item into the non state array
+    tasksArray.push(task)
+
+    // Set state array
+    setTasks(tasksArray)
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Form addTasks={addTasks}/>
+
+      <div className='middle-content'>
+        <Todo tasks={tasks} removeTask={removeTask} toggleComplete={toggleComplete}/>
+
+        <CompletedTodo tasks={tasks} removeTask={removeTask} toggleComplete={toggleComplete}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
     </div>
   )
 }

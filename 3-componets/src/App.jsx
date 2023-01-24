@@ -11,8 +11,9 @@ import Profile from './components/Profile'
  * Inside this directory, a file with a capital first letter named Profile.jsx
  * is our component.
  * 
- * Profile uses the state variable name and its setter, setName to
+ * The component Profile uses the state variable name and its setter, setName, to
  * both display the name and change the value.
+ * 
  * This is because we passed these two values as Props.
  * 
  * Look at the line reading <Profile name={name} setName={setName}/>
