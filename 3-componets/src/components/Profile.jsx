@@ -1,16 +1,16 @@
 /**
  * The first line: const Profile = ({name, setName}) => {...
  * importantly allows the name state and the setter into this component.
- * If they were not passed in as props, our program would break.
+ * If they were not passed in as props these values would be undefined.
  * 
  * We now have access to both the name value and the setName setter
  * which this component uses by displaying the name and then by
- * changing the setName in the function toggleName
+ * changing the name using setName in the function toggleName.
  * 
- * Importantly, the states exist at the bottom level. In React,
- * we always prop drill upwards through components. We do not go back down.
+ * Importantly, the states exist at the bottom level and we pass it up into components. 
+ * With React, we always prop drill upwards through components. We do not go back down.
  * 
- * We could can pass functions into our component which later examples will demonstrate.
+ * We can also pass functions into our component which later examples will demonstrate.
  */
 
 

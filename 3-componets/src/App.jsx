@@ -9,7 +9,7 @@ import Profile from './components/Profile'
  * In the src directory, a nested directory called components was made.
  * 
  * Inside this directory, a file with a capital first letter named Profile.jsx
- * is our component. Note .jsx or .js will both work.
+ * is our component.
  * 
  * Profile uses the state variable name and its setter, setName to
  * both display the name and change the value.
