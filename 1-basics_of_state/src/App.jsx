@@ -3,7 +3,7 @@ import { useState } from 'react'
 /**
 * Below is a useState variable.
 * 
-* Notice how it was imported this hook on line 1.
+* Notice how this hook was imported on line 1.
 * 
 * If we want to use its value in HTML, we can render it with {name}.
 * The current value will be what is shown on your page.
@@ -11,14 +11,15 @@ import { useState } from 'react'
 * However, state variables must not be treated like a normal JS variable.
 * Do not try to re assign its value with equals sign =.
 * 
-* If we want to change its value, which we often do, we must use setName.
+* If we want to change its value, which we often do, we must use its setter. 
+* In this case, setName.
 * 
-* Click on the button,
+* Click on the top button,
 * It will trigger a function that uses setName and assigns the value to 'Sarah'.
 * 
-* Notice how the web page instantly updates the names value.
+* Notice how the web page instantly updates the name value.
 * 
-* Next Click the second button that runs the function randomName.
+* Next, click the second button that runs the function randomName.
 * See how setName is used with simple logic to re assign the value.
 */
 function App() {
