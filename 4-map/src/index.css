@@ -1,7 +1,6 @@
 :root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -21,6 +20,10 @@
   font-size: 2rem;
 }
 
+*{
+  margin: .4rem;
+}
+
 .App{
   display: flex;
   flex-direction: column;
@@ -28,14 +31,4 @@
   align-items: center;
 }
 
-button{
-  margin-top: 1rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: none;
-  padding: .5rem 1rem .5rem 1rem;
-}
 
-button:hover{
-  background-color: rgb(183, 112, 20);
-}

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Profile from './components/Profile'
 
-
 /**
  * Components are a huge part of React
  * 
@@ -25,6 +24,7 @@ import Profile from './components/Profile'
  * Now look in the file Profile.jsx
  * 
  */
+
 function App() {
   const [name, setName] = useState('Jenny')
 
